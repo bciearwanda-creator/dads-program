@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>In Loving Memory — LEE DECUIR A CELEBRATION OF LIFE
+Program</title>
+  <meta name="description" content="Memorial Program Collection" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+  /* ════ THEMES ════ */
+  [data-theme="midnight"] {
+    --bg:#0f1320;--bg2:#161d30;--bg3:#1e2740;--surface:#1a2238;
+    --border:rgba(184,151,90,0.22);--accent:#b8975a;--accent2:#d4b078;
+    --text:#f0ece2;--text2:rgba(240,236,226,0.55);--text3:rgba(240,236,226,0.28);
+    --card-bg:#1a2238;--card-hover:#1f2a45;--header-bg:#0f1320;
+    --tag-bg:rgba(184,151,90,0.13);--shadow:0 8px 40px rgba(0,0,0,0.5);
+  }
+  [data-theme="sepia"] {
+    --bg:#f4ede0;--bg2:#ede4d3;--bg3:#e5dbc8;--surface:#faf5ec;
+    --border:rgba(120,85,40,0.2);--accent:#7a5528;--accent2:#9c7040;
+    --text:#2a1f10;--text2:rgba(42,31,16,0.6);--text3:rgba(42,31,16,0.3);
+    --card-bg:#faf5ec;--card-hover:#f0e9d8;--header-bg:#ede4d3;
+    --tag-bg:rgba(120,85,40,0.1);--shadow:0 8px 40px rgba(100,60,10,0.12);
+  }
+  [data-theme="slate"] {
+    --bg:#1c1c1e;--bg2:#242426;--bg3:#2c2c2e;--surface:#222224;
+    --border:rgba(255,255,255,0.09);--accent:#a8c0d6;--accent2:#c8dae8;
+    --text:#e8e8ea;--text2:rgba(232,232,234,0.55);--text3:rgba(232,232,234,0.25);
+    --card-bg:#252527;--card-hover:#2e2e30;--header-bg:#1c1c1e;
+    --tag-bg:rgba(168,192,214,0.1);--shadow:0 8px 40px rgba(0,0,0,0.6);
+  }
+
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--bg);color:var(--text);
+    min-height:100vh;transition:background 0.4s,color 0.4s;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.025;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:200px;
+  }
+
+  /* ── HEADER ── */
+  header{
+    background:var(--header-bg);border-bottom:1px solid var(--border);
+    position:sticky;top:0;z-index:100;
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    transition:background 0.4s;
+  }
+  .header-inner{
+    max-width:1100px;margin:0 auto;padding:16px 32px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+  }
+  .site-brand{display:flex;flex-direction:column;gap:1px;cursor:pointer;}
+  .brand-eyebrow{
+    font-size:9px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;
+    color:var(--accent);opacity:0.85;
+  }
+  .brand-title{
+    font-family:'Cinzel',serif;font-size:clamp(15px,2vw,20px);
+    font-weight:400;color:var(--text);letter-spacing:0.06em;line-height:1;
+  }
+  .header-right{display:flex;align-items:center;gap:12px;}
+  .theme-switcher{
+    display:flex;align-items:center;gap:6px;
+    background:var(--bg3);border:1px solid var(--border);
+    border-radius:30px;padding:4px 8px;
+  }
+  .theme-label{font-size:10px;letter-spacing:0.1em;color:var(--text2);margin-right:2px;}
+  .theme-btn{
+    width:22px;height:22px;border-radius:50%;border:2px solid transparent;
+    cursor:pointer;transition:all 0.2s;
+  }
+  .theme-btn:hover{transform:scale(1.15);}
+  .theme-btn.active{border-color:var(--accent2);}
+  .theme-btn[data-t="midnight"]{background:radial-gradient(circle at 40% 40%,#243050,#0f1320);}
+  .theme-btn[data-t="sepia"]{background:radial-gradient(circle at 40% 40%,#c4a06a,#7a5528);}
+  .theme-btn[data-t="slate"]{background:radial-gradient(circle at 40% 40%,#3a3a3c,#1c1c1e);}
+
+  /* ── HERO ── */
+  .hero{
+    position:relative;padding:80px 32px 60px;
+    text-align:center;overflow:hidden;
+  }
+  .hero::before,.hero::after{
+    content:'';position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);border-radius:50%;
+    border:1px solid var(--border);pointer-events:none;
+  }
+  .hero::before{width:600px;height:600px;opacity:0.4;}
+  .hero::after{width:900px;height:900px;opacity:0.2;}
+  .hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1;}
+  .hero-tag{
+    display:inline-block;background:var(--tag-bg);border:1px solid var(--border);
+    color:var(--accent2);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+    padding:5px 14px;border-radius:20px;margin-bottom:22px;font-weight:500;
+  }
+  .hero-title{
+    font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,58px);
+    font-weight:400;line-height:1.15;color:var(--text);margin-bottom:18px;
+  }
+  .hero-title em{font-style:italic;color:var(--accent2);}
+  .hero-subtitle{
+    font-size:15px;font-weight:300;color:var(--text2);
+    line-height:1.7;max-width:480px;margin:0 auto 32px;
+  }
+  .hero-divider{
+    display:flex;align-items:center;justify-content:center;
+    gap:14px;color:var(--accent);opacity:0.5;margin-bottom:32px;
+  }
+  .hero-divider::before,.hero-divider::after{
+    content:'';display:block;width:80px;height:1px;background:var(--accent);opacity:0.6;
+  }
+  .hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+  .stat{display:flex;flex-direction:column;align-items:center;gap:3px;}
+  .stat-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--accent2);}
+  .stat-label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);}
+
+  /* ── PORTRAIT ── */
+  .portrait-wrap{
+    position:relative;
+    display:inline-block;
+    margin-bottom:28px;
+  }
+  /* outer glow ring */
+  .portrait-wrap::before{
+    content:'';
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    background:conic-gradient(var(--accent),var(--accent2),var(--accent));
+    opacity:0.55;
+    filter:blur(8px);
+    z-index:0;
+    animation:portraitGlow 4s ease-in-out infinite alternate;
+  }
+  @keyframes portraitGlow{
+    from{opacity:0.4;filter:blur(8px);}
+    to{opacity:0.75;filter:blur(14px);}
+  }
+  /* gold border ring */
+  .portrait-wrap::after{
+    content:'';
+    position:absolute;
+    inset:-3px;
+    border-radius:50%;
+    border:2px solid var(--accent);
+    opacity:0.7;
+    z-index:2;
+    pointer-events:none;
+  }
+  .portrait-img{
+    position:relative;
+    z-index:1;
+    width:148px;
+    height:148px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center top;
+    display:block;
+    background:var(--bg3);
+    border:3px solid var(--surface);
+  }
+  /* placeholder shown when no real photo yet */
+  .portrait-placeholder{
+    position:relative;
+    z-index:1;
+    width:148px;
+    height:148px;
+    border-radius:50%;
+    background:var(--bg3);
+    border:3px solid var(--surface);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    cursor:default;
+  }
+  .portrait-placeholder svg{
+    width:36px;height:36px;stroke:var(--accent);opacity:0.5;
+    fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
+  }
+  .portrait-placeholder span{
+    font-size:9px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--text3);
+  }
+  /* small decorative dots around the circle */
+  .portrait-dot{
+    position:absolute;width:6px;height:6px;border-radius:50%;
+    background:var(--accent2);opacity:0.6;z-index:3;
+  }
+  .portrait-dot:nth-child(1){top:6px;left:50%;transform:translateX(-50%);}
+  .portrait-dot:nth-child(2){bottom:6px;left:50%;transform:translateX(-50%);}
+  .portrait-dot:nth-child(3){left:6px;top:50%;transform:translateY(-50%);}
+  .portrait-dot:nth-child(4){right:6px;top:50%;transform:translateY(-50%);}
+
+  @media(max-width:600px){
+    .portrait-img,.portrait-placeholder{width:120px;height:120px;}
+  }
+
+  /* ── SECTION ── */
+  .section{max-width:1100px;margin:0 auto;padding:0 32px 70px;}
+  .section-header{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid var(--border);
+  }
+  .section-title{
+    font-family:'Cinzel',serif;font-size:13px;font-weight:600;
+    letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);
+  }
+  .section-count{font-size:11px;color:var(--text3);letter-spacing:0.08em;}
+
+  /* ── PDF CARDS ── */
+  .pdf-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;
+  }
+  .pdf-card{
+    background:var(--card-bg);border:1px solid var(--border);
+    border-radius:12px;overflow:hidden;cursor:pointer;
+    transition:all 0.25s ease;position:relative;
+  }
+  .pdf-card:hover{
+    background:var(--card-hover);border-color:var(--accent);
+    transform:translateY(-3px);box-shadow:var(--shadow);
+  }
+  .card-thumb{
+    height:160px;display:flex;align-items:center;justify-content:center;
+    background:var(--bg3);position:relative;overflow:hidden;
+  }
+  .card-thumb-icon{
+    width:56px;height:72px;background:var(--surface);border:1px solid var(--border);
+    border-radius:4px;display:flex;align-items:center;justify-content:center;
+    position:relative;box-shadow:0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card-thumb-icon::before{
+    content:'';position:absolute;top:0;right:0;width:16px;height:16px;
+    background:var(--bg3);clip-path:polygon(100% 0,100% 100%,0 100%);
+  }
+  .card-thumb-icon svg{
+    width:22px;height:22px;stroke:var(--accent);fill:none;
+    stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
+  }
+  .card-thumb::after{
+    content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0.7;
+  }
+  .card-body{padding:18px 20px 20px;}
+  .card-category{
+    display:inline-block;font-size:9px;font-weight:500;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--accent2);background:var(--tag-bg);
+    border:1px solid var(--border);padding:3px 9px;border-radius:12px;margin-bottom:10px;
+  }
+  .card-title{
+    font-family:'Playfair Display',serif;font-size:17px;font-weight:400;
+    color:var(--text);line-height:1.3;margin-bottom:6px;
+  }
+  .card-meta{font-size:12px;color:var(--text2);font-weight:300;line-height:1.5;margin-bottom:14px;}
+  .card-footer{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:12px;border-top:1px solid var(--border);
+  }
+  .card-date{font-size:10px;color:var(--text3);letter-spacing:0.08em;}
+  .card-open{
+    display:flex;align-items:center;gap:5px;font-size:11px;
+    color:var(--accent2);font-weight:500;letter-spacing:0.06em;
+  }
+  .card-open svg{
+    width:12px;height:12px;stroke:currentColor;fill:none;
+    stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.2s;
+  }
+  .pdf-card:hover .card-open svg{transform:translateX(3px);}
+
+  /* ── TRIBUTE BAND ── */
+  .tribute-band{
+    background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:56px 32px;margin-bottom:60px;text-align:center;position:relative;overflow:hidden;
+  }
+  .tribute-band::before{
+    content:'\201C';position:absolute;top:-20px;left:50%;transform:translateX(-50%);
+    font-family:'Playfair Display',serif;font-size:160px;color:var(--accent);
+    opacity:0.06;line-height:1;pointer-events:none;
+  }
+  .tribute-quote{
+    font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,26px);
+    font-style:italic;font-weight:400;color:var(--text);
+    max-width:700px;margin:0 auto 16px;line-height:1.6;
+  }
+  .tribute-attr{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);}
+
+  /* ── PDF VIEWER ── */
+  #viewer-page{
+    display:none;flex-direction:column;height:100vh;
+    position:fixed;inset:0;background:var(--bg);z-index:200;
+  }
+  #viewer-page.active{display:flex;}
+  .viewer-header{
+    background:var(--header-bg);border-bottom:1px solid var(--border);
+    padding:14px 28px;display:flex;align-items:center;
+    justify-content:space-between;gap:16px;flex-shrink:0;
+  }
+  .viewer-left{display:flex;align-items:center;gap:14px;}
+  .viewer-title-block{display:flex;flex-direction:column;gap:2px;min-width:0;}
+  .viewer-label{font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);}
+  .viewer-name{
+    font-family:'Playfair Display',serif;font-size:clamp(16px,2.5vw,22px);
+    font-weight:400;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .viewer-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .action-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    background:transparent;border:1px solid var(--border);color:var(--accent2);
+    text-decoration:none;padding:8px 16px;border-radius:6px;
+    font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;
+    letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s;cursor:pointer;
+  }
+  .action-btn:hover{background:var(--tag-bg);border-color:var(--accent);color:var(--accent);}
+  .action-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .viewer-frame-wrap{flex:1;overflow:hidden;position:relative;background:#222;}
+  .viewer-frame-wrap iframe{width:100%;height:100%;border:none;}
+  .viewer-fallback{
+    display:none;position:absolute;inset:0;align-items:center;justify-content:center;
+    flex-direction:column;gap:16px;background:var(--bg);color:var(--text);
+    text-align:center;padding:40px;
+  }
+  .viewer-fallback.visible{display:flex;}
+  .viewer-fallback h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:300;color:var(--accent2);}
+  .viewer-fallback a{color:var(--accent2);text-decoration:underline;text-underline-offset:3px;font-size:14px;}
+  .viewer-footer{
+    background:var(--header-bg);border-top:1px solid var(--border);
+    padding:10px 28px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
+  }
+  .viewer-footer-quote{font-family:'Playfair Display',serif;font-size:12px;font-style:italic;color:var(--text3);}
+  .viewer-footer-info{font-size:10px;color:var(--text3);letter-spacing:0.08em;}
+
+  /* ── SITE FOOTER ── */
+  .site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px 32px;}
+  .footer-inner{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;margin-bottom:28px;
+  }
+  .footer-col h4{
+    font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:12px;
+  }
+  .footer-col p{font-size:13px;font-weight:300;color:var(--text2);line-height:1.7;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .footer-col ul li{font-size:12px;color:var(--text2);font-weight:300;display:flex;align-items:center;gap:7px;}
+  .footer-col ul li::before{content:'·';color:var(--accent);opacity:0.6;}
+  .footer-bottom{
+    max-width:1100px;margin:0 auto;padding-top:20px;border-top:1px solid var(--border);
+    display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
+  .footer-copy{font-size:11px;color:var(--text3);letter-spacing:0.05em;}
+  .footer-brand{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:var(--accent);opacity:0.7;}
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  .hero{animation:fadeUp 0.7s ease both;}
+  .tribute-band{animation:fadeUp 0.7s 0.1s ease both;}
+  .section{animation:fadeUp 0.7s 0.15s ease both;}
+  .site-footer{animation:fadeUp 0.7s 0.2s ease both;}
+  .pdf-card{animation:fadeUp 0.5s ease both;}
+  .pdf-card:nth-child(1){animation-delay:0.05s;}
+  .pdf-card:nth-child(2){animation-delay:0.12s;}
+  .pdf-card:nth-child(3){animation-delay:0.19s;}
+  .pdf-card:nth-child(4){animation-delay:0.26s;}
+  .pdf-card:nth-child(5){animation-delay:0.33s;}
+  .pdf-card:nth-child(6){animation-delay:0.40s;}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:768px){
+    .header-inner{padding:14px 18px;}
+    .hero{padding:50px 18px 40px;}
+    .section{padding:0 18px 50px;}
+    .tribute-band{padding:36px 18px;}
+    .footer-inner{grid-template-columns:1fr;gap:20px;}
+    .site-footer{padding:32px 18px 24px;}
+    .pdf-grid{grid-template-columns:1fr;}
+    .viewer-header{padding:12px 16px;}
+    .viewer-footer{padding:8px 16px;}
+    .viewer-footer-quote{display:none;}
+    .hero-stats{gap:24px;}
+    .theme-label{display:none;}
+  }
+  </style>
+</head>
+<body>
+
+<!-- ══ MAIN PAGE ══ -->
+<div id="main-page">
+
+  <header>
+    <div class="header-inner">
+      <div class="site-brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <span class="brand-eyebrow">Family Celebration</span>
+        <span class="brand-title">In Loving Memory</span>
+      </div>
+      <div class="header-right">
+        <div class="theme-switcher">
+          <span class="theme-label">Theme</span>
+          <button class="theme-btn active" data-t="midnight" title="Midnight" onclick="setTheme('midnight')"></button>
+          <button class="theme-btn" data-t="sepia" title="Sepia" onclick="setTheme('sepia')"></button>
+          <button class="theme-btn" data-t="slate" title="Slate" onclick="setTheme('slate')"></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <!--
+        ══ PORTRAIT PHOTO ══
+        To add Dad's photo:
+          1. Upload your image (e.g. dad.jpg) to the same GitHub folder as index.html
+          2. Replace the <div class="portrait-placeholder"> block below with:
+             <img class="portrait-img" src="dad.jpg" alt="Dad's Name" />
+          3. Remove the placeholder div entirely
+      -->
+      <div class="portrait-wrap">
+        <span class="portrait-dot"></span>
+        <span class="portrait-dot"></span>
+        <span class="portrait-dot"></span>
+        <span class="portrait-dot"></span>
+        <!-- PLACEHOLDER — swap this img tag in when you have the photo -->
+        <div class="portrait-placeholder">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+   
+  <img class="portrait-img" src="dad.jpeg" alt="Lee" />
+</div>
+        </div>
+        <!-- REAL PHOTO — uncomment & set src when ready:
+        <img class="portrait-img" src="dad.jpg" alt="Father's Name" />
+        -->
+      </div>
+
+      <span class="hero-tag">✦ Memorial Program Archive</span>
+      <h1 class="hero-title">Honoring Those<br/><em>We Love</em></h1>
+      <p class="hero-subtitle">
+        A curated collection of memorial programs — each a beautiful record
+        of a life well-lived and deeply cherished.
+      </p>
+      <div class="hero-divider"><span>✦</span></div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" id="program-count">+</span>
+          <span class="stat-label">Programs</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Memories</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">♡</span>
+          <span class="stat-label">With Love</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tribute-band">
+    <p class="tribute-quote">
+      "Those we love don't go away, they walk beside us every day —
+      unseen, unheard, but always near; still loved, still missed,
+      still very dear."
+    </p>
+    <p class="tribute-attr">— Traditional Memorial Verse</p>
+  </div>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-title">Memorial Programs</span>
+      <span class="section-count" id="card-count">Programs</span>
+    </div>
+    <div class="pdf-grid" id="pdf-grid"></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>About This Collection</h4>
+        <p>A family archive of memorial programs, preserved digitally so loved ones near and far can access them at any time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>How To Use</h4>
+        <ul>
+          <li>Click any card to view the program</li>
+          <li>Use the Download button to save a copy</li>
+          <li>Share the page link via QR code</li>
+          <li>Switch themes with the header buttons</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sharing</h4>
+        <p> Share the URL or generate a QR code to give family and friends instant access to all programs.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 FAMILY CELEBRATION OF LEE'S LIFE
+ · All Rights Reserved</span>
+      <span class="footer-brand">With love, always.</span>
+    </div>
+  </footer>
+
+</div><!-- /main-page -->
+
+
+<!-- ══ PDF VIEWER ══ -->
+<div id="viewer-page">
+  <div class="viewer-header">
+    <div class="viewer-left">
+      <button class="action-btn" onclick="closePDF()">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </button>
+      <div class="viewer-title-block">
+        <span class="viewer-label">Viewing Program</span>
+        <span class="viewer-name" id="viewer-title">—</span>
+      </div>
+    </div>
+    <div class="viewer-actions">
+      <div class="theme-switcher">
+        <span class="theme-label">Theme</span>
+        <button class="theme-btn" data-t="midnight" onclick="setTheme('midnight')"></button>
+        <button class="theme-btn" data-t="sepia" onclick="setTheme('sepia')"></button>
+        <button class="theme-btn" data-t="slate" onclick="setTheme('slate')"></button>
+      </div>
+      <a class="action-btn" id="dl-link" href="#" download>
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+    </div>
+  </div>
+
+  <div class="viewer-frame-wrap">
+    <iframe id="pdf-iframe" title="Memorial Program" src="about:blank"></iframe>
+    <div class="viewer-fallback" id="viewer-fallback">
+      <h2>Unable to display PDF</h2>
+      <p>Your browser may not support inline PDFs.</p>
+      <p><a id="fallback-link" href="#" target="_blank">Click here to open the program →</a></p>
+    </div>
+  </div>
+
+  <div class="viewer-footer">
+    <span class="viewer-footer-quote">"Gone from our sight, but never from our hearts."</span>
+    <span class="viewer-footer-info" id="viewer-meta">Memorial Program</span>
+  </div>
+</div>
+
+
+<script>
+/* ════════════════════════════════════
+   PROGRAM DATA
+   ➜ HOW TO ADD YOUR OWN PDFs:
+     1. Upload each .pdf to the same GitHub repo folder as index.html
+     2. Edit the `programs` array — set `file` to your PDF filename
+     3. Fill in name, date, location, description, category
+     4. Add or remove objects to match how many PDFs you have
+════════════════════════════════════ */
+const programs = [
+  {
+    id: 1,
+    name: "LEE DECUIR",
+    file: "LEE DECUIR A CELEBRATION OF LIFE.pdf",
+    date: "May 16, 2026",
+    location: "City, Country",
+    description: "A celebration of a life filled with kindness, laughter, and love shared across generations.",
+    category: "Funeral Service",
+    year: "2026"
+  },
+  
+];
+
+function renderCards() {
+  const grid = document.getElementById('pdf-grid');
+  document.getElementById('program-count').textContent = programs.length;
+  document.getElementById('card-count').textContent = programs.length + ' program' + (programs.length !== 1 ? 's' : '');
+  grid.innerHTML = programs.map(p => `
+    <div class="pdf-card" onclick="openPDF(${p.id})">
+      <div class="card-thumb">
+        <div class="card-thumb-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="card-category">${p.category}</span>
+        <h3 class="card-title">${p.name}</h3>
+        <p class="card-meta">${p.description}</p>
+        <div class="card-footer">
+          <span class="card-date">${p.date}</span>
+          <span class="card-open">
+            View Program
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function openPDF(id) {
+  const p = programs.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('viewer-title').textContent = p.name;
+  document.getElementById('viewer-meta').textContent = p.category + ' · ' + p.date;
+  document.getElementById('dl-link').href = p.file;
+  document.getElementById('dl-link').download = p.file;
+  document.getElementById('fallback-link').href = p.file;
+  const iframe = document.getElementById('pdf-iframe');
+  const fallback = document.getElementById('viewer-fallback');
+  fallback.classList.remove('visible');
+  iframe.style.display = 'block';
+  iframe.src = p.file + '#view=FitH&toolbar=1';
+  iframe.onerror = () => { iframe.style.display = 'none'; fallback.classList.add('visible'); };
+  syncThemeBtns();
+  document.getElementById('main-page').style.display = 'none';
+  document.getElementById('viewer-page').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePDF() {
+  document.getElementById('viewer-page').classList.remove('active');
+  document.getElementById('main-page').style.display = 'block';
+  document.body.style.overflow = '';
+  document.getElementById('pdf-iframe').src = 'about:blank';
+}
+
+function setTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  syncThemeBtns();
+  localStorage.setItem('memorial-theme', t);
+}
+
+function syncThemeBtns() {
+  const t = document.documentElement.getAttribute('data-theme');
+  document.querySelectorAll('.theme-btn').forEach(b => b.classList.toggle('active', b.dataset.t === t));
+}
+
+// Init
+const saved = localStorage.getItem('memorial-theme');
+if (saved) setTheme(saved); else syncThemeBtns();
+renderCards();
+</script>
+</body>
+</html>
