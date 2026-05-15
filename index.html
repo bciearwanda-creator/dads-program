@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lee Arthur DeCuir — A Celebration of Life</title>
+  <title>In Loving Memory — LEE DECUIR A CELEBRATION OF LIFE
+Program</title>
   <meta name="description" content="Memorial Program Collection" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -234,6 +235,16 @@
     height:160px;display:flex;align-items:center;justify-content:center;
     background:var(--bg3);position:relative;overflow:hidden;
   }
+  /* ── CARD THUMB PHOTO ── */
+  .card-thumb-photo{
+    width:100%;height:100%;
+    object-fit:cover;object-position:center top;
+    display:block;
+    transition:transform 0.4s ease;
+  }
+  .pdf-card:hover .card-thumb-photo{transform:scale(1.04);}
+
+  /* fallback icon shown when no photo */
   .card-thumb-icon{
     width:56px;height:72px;background:var(--surface);border:1px solid var(--border);
     border-radius:4px;display:flex;align-items:center;justify-content:center;
@@ -246,6 +257,30 @@
   .card-thumb-icon svg{
     width:22px;height:22px;stroke:var(--accent);fill:none;
     stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
+  }
+
+  /* ── CARD DOWNLOAD BUTTON (mobile-friendly) ── */
+  .card-dl-btn{
+    display:inline-flex;align-items:center;gap:5px;
+    margin-top:10px;
+    background:transparent;
+    border:1px solid var(--border);
+    color:var(--accent2);
+    text-decoration:none;
+    padding:7px 13px;
+    border-radius:6px;
+    font-family:'DM Sans',sans-serif;
+    font-size:10px;font-weight:500;
+    letter-spacing:0.1em;text-transform:uppercase;
+    transition:all 0.2s;
+    width:100%;justify-content:center;
+  }
+  .card-dl-btn:hover,.card-dl-btn:active{
+    background:var(--tag-bg);border-color:var(--accent);color:var(--accent);
+  }
+  .card-dl-btn svg{
+    width:11px;height:11px;stroke:currentColor;fill:none;
+    stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
   }
   .card-thumb::after{
     content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
@@ -440,12 +475,10 @@
         -->
       </div>
 
-      <span class="hero-tag">✦ A Celebration of Life</span>
-      <h1 class="hero-title">Lee Arthur<br/><em>DeCuir</em></h1>
+      <span class="hero-tag">✦A Celebration of Life</span>
+      <h1 class="hero-title">Lee Arthur<br/><em> DeCuir</em></h1>
       <p class="hero-subtitle">
-        The family of Lee Arthur DeCuir sincerely thanks you for your
-        prayers, support, love, and presence during this time of
-        remembrance and celebration.
+       The family of Lee Arthur DeCuir sincerely thanks you for your prayers, support, love, and presence during this timeof remembrance and celebration.
       </p>
       <div class="hero-divider"><span>✦</span></div>
       <div class="hero-stats">
@@ -467,16 +500,15 @@
 
   <div class="tribute-band">
     <p class="tribute-quote">
-      "To know Lee was to experience depth, warmth, intellect,
-      and intentional living."
+     “To know Lee was to experience depth, warmth, intellect, and intentional living.”
     </p>
-    <p class="tribute-attr">— The DeCuir Family</p>
+    <p class="tribute-attr">- The DeCuir Family</p>
   </div>
 
   <section class="section">
     <div class="section-header">
-      <span class="section-title">Lee DeCuir's Program</span>
-      <span class="section-count" id="card-count">Programs</span>
+      <span class="section-title">LEE DECUIR'S PROGRAM</span>
+      <span class="section-count" id="card-count">Program</span>
     </div>
     <div class="pdf-grid" id="pdf-grid"></div>
   </section>
@@ -485,7 +517,7 @@
     <div class="footer-inner">
       <div class="footer-col">
         <h4>About This Collection</h4>
-        <p>A Celebration of Life program for Lee DeCuir — his legacy lives on!</p>
+        <p>A celebration of life program for Lee DeCuir - his legacy lives on!</p>
       </div>
       <div class="footer-col">
         <h4>How To Use</h4>
@@ -498,11 +530,12 @@
       </div>
       <div class="footer-col">
         <h4>Sharing</h4>
-        <p>Share the URL or generate a QR code to give family and friends instant access to Lee's Celebration of Life program.</p>
+        <p> Share the URL or generate a QR code to give family and friends instant access to all programs.</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Family Celebration of Lee Arthur DeCuir's Life · All Rights Reserved</span>
+      <span class="footer-copy">© 2026 FAMILY CELEBRATION OF LEE'S LIFE
+ · All Rights Reserved</span>
       <span class="footer-brand">With love, always.</span>
     </div>
   </footer>
@@ -547,7 +580,7 @@
   </div>
 
   <div class="viewer-footer">
-    <span class="viewer-footer-quote">"To know Lee was to experience depth, warmth, intellect, and intentional living."</span>
+    <span class="viewer-footer-quote">"Gone from our sight, but never from our hearts."</span>
     <span class="viewer-footer-info" id="viewer-meta">Memorial Program</span>
   </div>
 </div>
@@ -567,19 +600,15 @@ const programs = [
     id: 1,
     name: "LEE DECUIR",
     file: "LEE DECUIR A CELEBRATION OF LIFE1.pdf",
+    photo: "dad.png",
     date: "May 16, 2026",
     location: "City, Country",
     description: "A celebration of a life filled with kindness, laughter, and love shared across generations.",
     category: "Celebration of Life",
     year: "2026"
   },
+  
 ];
-
-/* ── Detect mobile / iOS / Android ── */
-function isMobileDevice() {
-  return /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent)
-    || (navigator.maxTouchPoints > 1 && /MacIntel/.test(navigator.platform));
-}
 
 function renderCards() {
   const grid = document.getElementById('pdf-grid');
@@ -588,9 +617,12 @@ function renderCards() {
   grid.innerHTML = programs.map(p => `
     <div class="pdf-card" onclick="openPDF(${p.id})">
       <div class="card-thumb">
-        <div class="card-thumb-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
+        ${p.photo
+          ? `<img class="card-thumb-photo" src="${p.photo}" alt="${p.name}" />`
+          : `<div class="card-thumb-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>`
+        }
       </div>
       <div class="card-body">
         <span class="card-category">${p.category}</span>
@@ -603,6 +635,10 @@ function renderCards() {
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </span>
         </div>
+        <a class="card-dl-btn" href="${p.file}" download onclick="event.stopPropagation()">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
       </div>
     </div>
   `).join('');
@@ -611,15 +647,6 @@ function renderCards() {
 function openPDF(id) {
   const p = programs.find(x => x.id === id);
   if (!p) return;
-
-  /* ── MOBILE (iPhone 6–17, all Androids): open PDF directly in browser tab ── */
-  /* This completely bypasses the iframe cover-image/crop issue on mobile      */
-  if (isMobileDevice()) {
-    window.open(p.file, '_blank');
-    return;
-  }
-
-  /* ── DESKTOP: use the full-screen iframe viewer ── */
   document.getElementById('viewer-title').textContent = p.name;
   document.getElementById('viewer-meta').textContent = p.category + ' · ' + p.date;
   document.getElementById('dl-link').href = p.file;
@@ -631,13 +658,6 @@ function openPDF(id) {
   iframe.style.display = 'block';
   iframe.src = p.file + '#view=FitH&toolbar=1';
   iframe.onerror = () => { iframe.style.display = 'none'; fallback.classList.add('visible'); };
-  /* Safety: show fallback if iframe still blank after 4s */
-  setTimeout(() => {
-    try {
-      const doc = iframe.contentDocument || iframe.contentWindow.document;
-      if (!doc || doc.body.innerHTML === '') { iframe.style.display='none'; fallback.classList.add('visible'); }
-    } catch(e) { /* PDF loaded cross-origin — fine */ }
-  }, 4000);
   syncThemeBtns();
   document.getElementById('main-page').style.display = 'none';
   document.getElementById('viewer-page').classList.add('active');
