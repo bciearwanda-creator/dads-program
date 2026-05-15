@@ -2,10 +2,9 @@
 <html lang="en" data-theme="midnight">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>In Loving Memory — LEE DECUIR A CELEBRATION OF LIFE
-Program</title>
-  <meta name="description" content="Memorial Program Collection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>In Loving Memory — LEE DECUIR A CELEBRATION OF LIFE</title>
+  <meta name="description" content="A Celebration of Life — Lee Arthur DeCuir" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
@@ -129,7 +128,6 @@ Program</title>
     display:inline-block;
     margin-bottom:28px;
   }
-  /* outer glow ring */
   .portrait-wrap::before{
     content:'';
     position:absolute;
@@ -145,7 +143,6 @@ Program</title>
     from{opacity:0.4;filter:blur(8px);}
     to{opacity:0.75;filter:blur(14px);}
   }
-  /* gold border ring */
   .portrait-wrap::after{
     content:'';
     position:absolute;
@@ -168,43 +165,18 @@ Program</title>
     background:var(--bg3);
     border:3px solid var(--surface);
   }
-  /* placeholder shown when no real photo yet */
   .portrait-placeholder{
-    position:relative;
-    z-index:1;
-    width:148px;
-    height:148px;
-    border-radius:50%;
-    background:var(--bg3);
-    border:3px solid var(--surface);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    cursor:default;
+    position:relative;z-index:1;width:148px;height:148px;border-radius:50%;
+    background:var(--bg3);border:3px solid var(--surface);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
   }
-  .portrait-placeholder svg{
-    width:36px;height:36px;stroke:var(--accent);opacity:0.5;
-    fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
-  }
-  .portrait-placeholder span{
-    font-size:9px;letter-spacing:0.14em;text-transform:uppercase;
-    color:var(--text3);
-  }
-  /* small decorative dots around the circle */
-  .portrait-dot{
-    position:absolute;width:6px;height:6px;border-radius:50%;
-    background:var(--accent2);opacity:0.6;z-index:3;
-  }
+  .portrait-placeholder svg{width:36px;height:36px;stroke:var(--accent);opacity:0.5;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+  .portrait-placeholder span{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text3);}
+  .portrait-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--accent2);opacity:0.6;z-index:3;}
   .portrait-dot:nth-child(1){top:6px;left:50%;transform:translateX(-50%);}
   .portrait-dot:nth-child(2){bottom:6px;left:50%;transform:translateX(-50%);}
   .portrait-dot:nth-child(3){left:6px;top:50%;transform:translateY(-50%);}
   .portrait-dot:nth-child(4){right:6px;top:50%;transform:translateY(-50%);}
-
-  @media(max-width:600px){
-    .portrait-img,.portrait-placeholder{width:120px;height:120px;}
-  }
 
   /* ── SECTION ── */
   .section{max-width:1100px;margin:0 auto;padding:0 32px 70px;}
@@ -231,20 +203,29 @@ Program</title>
     background:var(--card-hover);border-color:var(--accent);
     transform:translateY(-3px);box-shadow:var(--shadow);
   }
+
+  /* ── CARD THUMBNAIL — photo version ── */
   .card-thumb{
-    height:160px;display:flex;align-items:center;justify-content:center;
+    height:200px;
+    display:flex;align-items:center;justify-content:center;
     background:var(--bg3);position:relative;overflow:hidden;
   }
-  /* ── CARD THUMB PHOTO ── */
+  /* actual photo thumbnail */
   .card-thumb-photo{
     width:100%;height:100%;
-    object-fit:cover;object-position:center top;
+    object-fit:cover;
+    object-position:center top;
     display:block;
     transition:transform 0.4s ease;
   }
   .pdf-card:hover .card-thumb-photo{transform:scale(1.04);}
-
-  /* fallback icon shown when no photo */
+  /* subtle dark overlay so card text badge is readable */
+  .card-thumb-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to bottom,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.45) 100%);
+    z-index:1;
+  }
+  /* fallback icon (shown when no photo) */
   .card-thumb-icon{
     width:56px;height:72px;background:var(--surface);border:1px solid var(--border);
     border-radius:4px;display:flex;align-items:center;justify-content:center;
@@ -258,34 +239,12 @@ Program</title>
     width:22px;height:22px;stroke:var(--accent);fill:none;
     stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
   }
-
-  /* ── CARD DOWNLOAD BUTTON (mobile-friendly) ── */
-  .card-dl-btn{
-    display:inline-flex;align-items:center;gap:5px;
-    margin-top:10px;
-    background:transparent;
-    border:1px solid var(--border);
-    color:var(--accent2);
-    text-decoration:none;
-    padding:7px 13px;
-    border-radius:6px;
-    font-family:'DM Sans',sans-serif;
-    font-size:10px;font-weight:500;
-    letter-spacing:0.1em;text-transform:uppercase;
-    transition:all 0.2s;
-    width:100%;justify-content:center;
-  }
-  .card-dl-btn:hover,.card-dl-btn:active{
-    background:var(--tag-bg);border-color:var(--accent);color:var(--accent);
-  }
-  .card-dl-btn svg{
-    width:11px;height:11px;stroke:currentColor;fill:none;
-    stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
-  }
   .card-thumb::after{
     content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
     background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0.7;
+    z-index:2;
   }
+
   .card-body{padding:18px 20px 20px;}
   .card-category{
     display:inline-block;font-size:9px;font-weight:500;letter-spacing:0.18em;
@@ -329,16 +288,32 @@ Program</title>
   }
   .tribute-attr{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);}
 
-  /* ── PDF VIEWER ── */
+  /* ══════════════════════════════════════════
+     PDF VIEWER  — fully responsive, no cover
+  ══════════════════════════════════════════ */
   #viewer-page{
-    display:none;flex-direction:column;height:100vh;
-    position:fixed;inset:0;background:var(--bg);z-index:200;
+    display:none;
+    flex-direction:column;
+    /* full safe-area on all iPhone notches / Dynamic Island */
+    height:100dvh; /* dynamic viewport height: collapses browser chrome */
+    position:fixed;
+    inset:0;
+    /* respect iOS safe area insets */
+    padding-top:env(safe-area-inset-top);
+    padding-bottom:env(safe-area-inset-bottom);
+    padding-left:env(safe-area-inset-left);
+    padding-right:env(safe-area-inset-right);
+    background:var(--bg);
+    z-index:200;
+    overflow:hidden;
   }
   #viewer-page.active{display:flex;}
+
   .viewer-header{
     background:var(--header-bg);border-bottom:1px solid var(--border);
     padding:14px 28px;display:flex;align-items:center;
     justify-content:space-between;gap:16px;flex-shrink:0;
+    /* no extra padding here — viewer-page already handles safe areas */
   }
   .viewer-left{display:flex;align-items:center;gap:14px;}
   .viewer-title-block{display:flex;flex-direction:column;gap:2px;min-width:0;}
@@ -357,16 +332,46 @@ Program</title>
   }
   .action-btn:hover{background:var(--tag-bg);border-color:var(--accent);color:var(--accent);}
   .action-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-  .viewer-frame-wrap{flex:1;overflow:hidden;position:relative;background:#222;}
-  .viewer-frame-wrap iframe{width:100%;height:100%;border:none;}
+
+  /* ── iframe wrapper takes all remaining height ── */
+  .viewer-frame-wrap{
+    flex:1;
+    min-height:0;          /* critical: allows flex child to shrink below content size */
+    position:relative;
+    background:#111;
+    overflow:hidden;
+  }
+  .viewer-frame-wrap iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:none;
+    display:block;
+  }
+
+  /* ── Fallback for browsers that can't show iframe PDF ── */
   .viewer-fallback{
-    display:none;position:absolute;inset:0;align-items:center;justify-content:center;
-    flex-direction:column;gap:16px;background:var(--bg);color:var(--text);
+    display:none;
+    position:absolute;inset:0;
+    align-items:center;justify-content:center;
+    flex-direction:column;gap:16px;
+    background:var(--bg);color:var(--text);
     text-align:center;padding:40px;
+    z-index:2;
   }
   .viewer-fallback.visible{display:flex;}
-  .viewer-fallback h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:300;color:var(--accent2);}
-  .viewer-fallback a{color:var(--accent2);text-decoration:underline;text-underline-offset:3px;font-size:14px;}
+  .viewer-fallback h2{font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,26px);font-weight:300;color:var(--accent2);}
+  .viewer-fallback p{font-size:14px;color:var(--text2);max-width:340px;line-height:1.6;}
+  .viewer-fallback a{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:8px;padding:12px 24px;border-radius:8px;
+    background:var(--tag-bg);border:1px solid var(--border);
+    color:var(--accent2);text-decoration:none;font-size:14px;font-weight:500;
+    transition:all 0.2s;
+  }
+  .viewer-fallback a:hover{background:var(--bg3);border-color:var(--accent);}
+
   .viewer-footer{
     background:var(--header-bg);border-top:1px solid var(--border);
     padding:10px 28px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
@@ -409,20 +414,174 @@ Program</title>
   .pdf-card:nth-child(5){animation-delay:0.33s;}
   .pdf-card:nth-child(6){animation-delay:0.40s;}
 
-  /* ── RESPONSIVE ── */
+  /* ════════════════════════════════════
+     RESPONSIVE — ALL DEVICES
+  ════════════════════════════════════ */
+
+  @media(min-width:1024px){
+    .pdf-grid{grid-template-columns:repeat(3,1fr);}
+    .hero{padding:90px 40px 70px;}
+    .section{padding:0 40px 80px;}
+  }
+
+  @media(max-width:1023px) and (min-width:768px){
+    .header-inner{padding:14px 24px;}
+    .hero{padding:60px 24px 48px;}
+    .section{padding:0 24px 60px;}
+    .tribute-band{padding:44px 24px;}
+    .site-footer{padding:36px 24px 28px;}
+    .footer-inner{grid-template-columns:1fr 1fr;gap:24px;}
+    .pdf-grid{grid-template-columns:repeat(2,1fr);gap:18px;}
+    .hero-title{font-size:clamp(30px,4vw,46px);}
+    .portrait-img,.portrait-placeholder{width:134px;height:134px;}
+  }
+
   @media(max-width:768px){
-    .header-inner{padding:14px 18px;}
-    .hero{padding:50px 18px 40px;}
-    .section{padding:0 18px 50px;}
-    .tribute-band{padding:36px 18px;}
-    .footer-inner{grid-template-columns:1fr;gap:20px;}
-    .site-footer{padding:32px 18px 24px;}
-    .pdf-grid{grid-template-columns:1fr;}
-    .viewer-header{padding:12px 16px;}
-    .viewer-footer{padding:8px 16px;}
+    .header-inner{padding:12px 20px;gap:12px;}
+    .brand-title{font-size:16px;}
+    .hero{padding:52px 20px 42px;}
+    .hero::before{width:360px;height:360px;}
+    .hero::after{width:560px;height:560px;}
+    .section{padding:0 20px 52px;}
+    .tribute-band{padding:38px 20px;margin-bottom:48px;}
+    .tribute-quote{font-size:clamp(16px,2.8vw,22px);}
+    .footer-inner{grid-template-columns:1fr;gap:22px;}
+    .site-footer{padding:32px 20px 24px;}
+    .pdf-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
+    .viewer-header{padding:12px 18px;gap:10px;}
+    .viewer-footer{padding:9px 18px;}
     .viewer-footer-quote{display:none;}
-    .hero-stats{gap:24px;}
+    .hero-stats{gap:28px;}
     .theme-label{display:none;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;}
+  }
+
+  /* ── Large phones 480–767 ── */
+  @media(max-width:767px) and (min-width:480px){
+    .header-inner{padding:12px 18px;}
+    .brand-eyebrow{display:none;}
+    .hero{padding:48px 18px 38px;}
+    .hero-title{font-size:clamp(28px,6vw,40px);}
+    .hero-subtitle{font-size:14px;max-width:100%;}
+    .section{padding:0 18px 44px;}
+    .tribute-band{padding:34px 18px;margin-bottom:40px;}
+    .pdf-grid{grid-template-columns:1fr 1fr;gap:14px;}
+    .card-thumb{height:150px;}
+    .card-body{padding:14px 16px 16px;}
+    .card-title{font-size:15px;}
+    .card-meta{font-size:11px;}
+    .portrait-img,.portrait-placeholder{width:128px;height:128px;}
+    .viewer-name{font-size:15px;}
+    .viewer-actions .theme-switcher{display:none;}
+  }
+
+  /* ── Standard phones 390–479 ── */
+  @media(max-width:479px) and (min-width:390px){
+    .header-inner{padding:11px 16px;}
+    .brand-eyebrow{display:none;}
+    .brand-title{font-size:15px;}
+    .theme-switcher{padding:3px 6px;}
+    .theme-btn{width:20px;height:20px;}
+    .hero{padding:44px 16px 36px;}
+    .hero-title{font-size:clamp(26px,7vw,36px);}
+    .hero-subtitle{font-size:13.5px;max-width:100%;}
+    .hero-stats{gap:20px;}
+    .stat-num{font-size:22px;}
+    .hero-divider::before,.hero-divider::after{width:50px;}
+    .section{padding:0 16px 40px;}
+    .section-title{font-size:11px;}
+    .tribute-band{padding:30px 16px;margin-bottom:36px;}
+    .tribute-quote{font-size:clamp(15px,4vw,19px);}
+    .pdf-grid{grid-template-columns:1fr;gap:14px;}
+    .card-thumb{height:200px;}
+    .portrait-img,.portrait-placeholder{width:120px;height:120px;}
+    .site-footer{padding:28px 16px 20px;}
+    .footer-inner{gap:18px;}
+    .footer-col h4{font-size:9px;}
+    .footer-col p,.footer-col ul li{font-size:12px;}
+    .footer-copy,.footer-brand{font-size:10px;}
+    /* viewer on standard phone */
+    .viewer-header{padding:10px 14px;flex-wrap:wrap;gap:8px;}
+    .viewer-left{width:100%;}
+    .viewer-actions{width:100%;justify-content:flex-end;}
+    .viewer-actions .theme-switcher{display:none;}
+    .viewer-name{font-size:14px;}
+    .viewer-footer{padding:8px 14px;}
+    .viewer-footer-quote{display:none;}
+    .viewer-footer-info{font-size:10px;}
+  }
+
+  /* ── Small phones 320–389 ── */
+  @media(max-width:389px){
+    .header-inner{padding:10px 14px;gap:8px;}
+    .brand-eyebrow{display:none;}
+    .brand-title{font-size:14px;letter-spacing:0.04em;}
+    .theme-switcher{padding:3px 5px;gap:4px;}
+    .theme-btn{width:18px;height:18px;}
+    .theme-label{display:none;}
+    .hero{padding:38px 14px 30px;}
+    .hero::before{width:280px;height:280px;}
+    .hero::after{width:440px;height:440px;}
+    .hero-tag{font-size:8.5px;padding:4px 10px;letter-spacing:0.16em;}
+    .hero-title{font-size:clamp(22px,7.5vw,30px);margin-bottom:14px;}
+    .hero-subtitle{font-size:13px;margin-bottom:24px;}
+    .hero-stats{gap:16px;}
+    .stat-num{font-size:20px;}
+    .stat-label{font-size:9px;}
+    .hero-divider{margin-bottom:24px;}
+    .hero-divider::before,.hero-divider::after{width:36px;}
+    .portrait-img,.portrait-placeholder{width:108px;height:108px;}
+    .portrait-dot{width:5px;height:5px;}
+    .section{padding:0 14px 36px;}
+    .section-header{margin-bottom:20px;padding-bottom:10px;}
+    .section-title{font-size:10px;letter-spacing:0.14em;}
+    .tribute-band{padding:26px 14px;margin-bottom:30px;}
+    .tribute-quote{font-size:14px;line-height:1.5;}
+    .tribute-attr{font-size:10px;}
+    .pdf-grid{grid-template-columns:1fr;gap:12px;}
+    .card-thumb{height:180px;}
+    .card-body{padding:12px 14px 14px;}
+    .card-category{font-size:8px;padding:2px 7px;}
+    .card-title{font-size:14px;}
+    .card-meta{font-size:11px;margin-bottom:10px;}
+    .card-date{font-size:9px;}
+    .card-open{font-size:10px;}
+    .site-footer{padding:24px 14px 18px;}
+    .footer-inner{gap:16px;}
+    .footer-col h4{font-size:9px;margin-bottom:8px;}
+    .footer-col p,.footer-col ul li{font-size:11.5px;}
+    .footer-copy,.footer-brand{font-size:10px;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;gap:4px;}
+    /* viewer small phone */
+    .viewer-header{padding:9px 12px;flex-wrap:wrap;gap:8px;}
+    .viewer-left{width:100%;}
+    .viewer-actions{width:100%;justify-content:space-between;}
+    .viewer-actions .theme-switcher{display:none;}
+    .action-btn{padding:7px 12px;font-size:10px;}
+    .viewer-name{font-size:13px;}
+    .viewer-label{font-size:8px;}
+    .viewer-footer{padding:7px 12px;}
+    .viewer-footer-quote{display:none;}
+    .viewer-footer-info{font-size:9px;}
+  }
+
+  /* ── Touch devices: larger tap targets ── */
+  @media(hover:none) and (pointer:coarse){
+    .theme-btn{width:26px;height:26px;}
+    .action-btn{min-height:44px;padding:10px 18px;}
+    .pdf-card:hover{transform:none;}
+    .pdf-card:active{transform:translateY(-2px);box-shadow:var(--shadow);}
+    .card-open svg{transform:none!important;}
+  }
+
+  /* ── Safe areas for notch / Dynamic Island / home indicator ── */
+  @supports(padding:max(0px)){
+    header{padding-top:max(0px,env(safe-area-inset-top));}
+    .site-footer{padding-bottom:max(16px,env(safe-area-inset-bottom));}
+    .header-inner{
+      padding-left:max(16px,env(safe-area-inset-left));
+      padding-right:max(16px,env(safe-area-inset-right));
+    }
   }
   </style>
 </head>
@@ -435,7 +594,7 @@ Program</title>
     <div class="header-inner">
       <div class="site-brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
         <span class="brand-eyebrow">Family Celebration</span>
-        <span class="brand-title">Lee Arthur DeCuir</span>
+        <span class="brand-title">In Loving Memory</span>
       </div>
       <div class="header-right">
         <div class="theme-switcher">
@@ -452,39 +611,33 @@ Program</title>
     <div class="hero-inner">
       <!--
         ══ PORTRAIT PHOTO ══
-        To add Dad's photo:
-          1. Upload your image (e.g. dad.jpg) to the same GitHub folder as index.html
-          2. Replace the <div class="portrait-placeholder"> block below with:
-             <img class="portrait-img" src="dad.jpg" alt="Dad's Name" />
-          3. Remove the placeholder div entirely
+        Replace dad.jpeg with your actual filename.
+        If no photo is available, remove the <img> tag and keep the placeholder div.
       -->
       <div class="portrait-wrap">
         <span class="portrait-dot"></span>
         <span class="portrait-dot"></span>
         <span class="portrait-dot"></span>
         <span class="portrait-dot"></span>
-        <!-- PLACEHOLDER — swap this img tag in when you have the photo -->
-        <div class="portrait-placeholder">
+        <img class="portrait-img" src="dad.png" alt="Lee Arthur DeCuir"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="portrait-placeholder" style="display:none;">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-   
-  <img class="portrait-img" src="dad.png" alt="Lee" />
-</div>
+          <span>Photo</span>
         </div>
-        <!-- REAL PHOTO — uncomment & set src when ready:
-        <img class="portrait-img" src="dad.jpg" alt="Father's Name" />
-        -->
       </div>
 
-      <span class="hero-tag">✦A Celebration of Life</span>
-      <h1 class="hero-title">Lee Arthur<br/><em> DeCuir</em></h1>
+      <span class="hero-tag">✦ A Celebration of Life</span>
+      <h1 class="hero-title">Lee Arthur<br/><em>DeCuir</em></h1>
       <p class="hero-subtitle">
-       The family of Lee Arthur DeCuir sincerely thanks you for your prayers, support, love, and presence during this timeof remembrance and celebration.
+        The family of Lee Arthur DeCuir sincerely thanks you for your prayers,
+        support, love, and presence during this time of remembrance and celebration.
       </p>
       <div class="hero-divider"><span>✦</span></div>
       <div class="hero-stats">
         <div class="stat">
-          <span class="stat-num" id="program-count">+</span>
-          <span class="stat-label">Programs</span>
+          <span class="stat-num" id="program-count">1</span>
+          <span class="stat-label">Program</span>
         </div>
         <div class="stat">
           <span class="stat-num">∞</span>
@@ -500,15 +653,15 @@ Program</title>
 
   <div class="tribute-band">
     <p class="tribute-quote">
-     “To know Lee was to experience depth, warmth, intellect, and intentional living.”
+      "To know Lee was to experience depth, warmth, intellect, and intentional living."
     </p>
-    <p class="tribute-attr">- The DeCuir Family</p>
+    <p class="tribute-attr">— The DeCuir Family</p>
   </div>
 
   <section class="section">
     <div class="section-header">
-      <span class="section-title">LEE DECUIR'S PROGRAM</span>
-      <span class="section-count" id="card-count">Program</span>
+      <span class="section-title">Memorial Programs</span>
+      <span class="section-count" id="card-count">1 program</span>
     </div>
     <div class="pdf-grid" id="pdf-grid"></div>
   </section>
@@ -517,7 +670,7 @@ Program</title>
     <div class="footer-inner">
       <div class="footer-col">
         <h4>About This Collection</h4>
-        <p>A celebration of life program for Lee DeCuir - his legacy lives on!</p>
+        <p>A family archive of memorial programs for Lee Arthur DeCuir, preserved digitally so loved ones near and far can access them at any time.</p>
       </div>
       <div class="footer-col">
         <h4>How To Use</h4>
@@ -530,12 +683,11 @@ Program</title>
       </div>
       <div class="footer-col">
         <h4>Sharing</h4>
-        <p> Share the URL or generate a QR code to give family and friends instant access to all programs.</p>
+        <p>Share the URL or generate a QR code to give family and friends instant access to all programs.</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 FAMILY CELEBRATION OF LEE'S LIFE
- · All Rights Reserved</span>
+      <span class="footer-copy">© 2026 FAMILY CELEBRATION OF LEE'S LIFE · All Rights Reserved</span>
       <span class="footer-brand">With love, always.</span>
     </div>
   </footer>
@@ -544,7 +696,18 @@ Program</title>
 
 
 <!-- ══ PDF VIEWER ══ -->
-
+<div id="viewer-page">
+  <div class="viewer-header">
+    <div class="viewer-left">
+      <button class="action-btn" onclick="closePDF()">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </button>
+      <div class="viewer-title-block">
+        <span class="viewer-label">Viewing Program</span>
+        <span class="viewer-name" id="viewer-title">—</span>
+      </div>
+    </div>
     <div class="viewer-actions">
       <div class="theme-switcher">
         <span class="theme-label">Theme</span>
@@ -559,18 +722,27 @@ Program</title>
     </div>
   </div>
 
+  <!-- iframe fills all remaining space — no cover image, opens PDF directly -->
   <div class="viewer-frame-wrap">
-    <iframe id="pdf-iframe" title="Memorial Program" src="about:blank"></iframe>
+    <iframe id="pdf-iframe" title="Memorial Program — Lee Arthur DeCuir" src="about:blank"
+            allow="fullscreen" loading="lazy"></iframe>
     <div class="viewer-fallback" id="viewer-fallback">
-      <h2>Unable to display PDF</h2>
-      <p>Your browser may not support inline PDFs.</p>
-      <p><a id="fallback-link" href="#" target="_blank">Click here to open the program →</a></p>
+      <h2>Unable to display PDF inline</h2>
+      <p>Your browser doesn't support inline PDF viewing. Use the button below to open it directly.</p>
+      <a id="fallback-link" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Open Program PDF →
+      </a>
+      <a id="dl-link-fallback" href="#" download>
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </a>
     </div>
   </div>
 
   <div class="viewer-footer">
     <span class="viewer-footer-quote">"Gone from our sight, but never from our hearts."</span>
-    <span class="viewer-footer-info" id="viewer-meta">Memorial Program</span>
+    <span class="viewer-footer-info" id="viewer-meta">Lee DeCuir's Program</span>
   </div>
 </div>
 
@@ -578,41 +750,48 @@ Program</title>
 <script>
 /* ════════════════════════════════════
    PROGRAM DATA
-   ➜ HOW TO ADD YOUR OWN PDFs:
-     1. Upload each .pdf to the same GitHub repo folder as index.html
-     2. Edit the `programs` array — set `file` to your PDF filename
-     3. Fill in name, date, location, description, category
-     4. Add or remove objects to match how many PDFs you have
+   ➜ HOW TO ADD MORE PDFs:
+     1. Upload each .pdf and its thumbnail image to the same GitHub folder
+     2. Add an object to the programs array below
+     3. Set "thumb" to your thumbnail image filename (or "" for icon fallback)
 ════════════════════════════════════ */
 const programs = [
   {
     id: 1,
-    name: "LEE DECUIR",
+    name: "Lee Arthur DeCuir",
     file: "LEE DECUIR A CELEBRATION OF LIFE1.pdf",
-    photo: "dad.png",
+    thumb: "dad1.png",          // ← photo shown on the card thumbnail
     date: "May 16, 2026",
-    location: "City, Country",
-    description: "A celebration of a life filled with kindness, laughter, and love shared across generations.",
-    category: "Celebration of Life",
+    location: "Celebration of Life",
+    description: "A celebration of a life filled with depth, warmth, intellect, and intentional living — shared across generations.",
+    category: "CELEBRATION OF LIFE",
     year: "2026"
   },
-  
 ];
 
+/* ── Render program cards ── */
 function renderCards() {
   const grid = document.getElementById('pdf-grid');
-  document.getElementById('program-count').textContent = programs.length;
-  document.getElementById('card-count').textContent = programs.length + ' program' + (programs.length !== 1 ? 's' : '');
-  grid.innerHTML = programs.map(p => `
-    <div class="pdf-card" onclick="openPDF(${p.id})">
-      <div class="card-thumb">
-        ${p.photo
-          ? `<img class="card-thumb-photo" src="${p.photo}" alt="${p.name}" />`
-          : `<div class="card-thumb-icon">
-              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </div>`
-        }
-      </div>
+  const count = programs.length;
+  document.getElementById('program-count').textContent = count;
+  document.getElementById('card-count').textContent = count + ' program' + (count !== 1 ? 's' : '');
+
+  grid.innerHTML = programs.map(p => {
+    const thumbHTML = p.thumb
+      ? `<img class="card-thumb-photo"
+              src="${p.thumb}"
+              alt="${p.name}"
+              loading="lazy"
+              onerror="this.style.display='none'" />
+         <div class="card-thumb-overlay"></div>`
+      : `<div class="card-thumb-icon">
+           <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+         </div>`;
+
+    return `
+    <div class="pdf-card" onclick="openPDF(${p.id})" role="button" tabindex="0"
+         onkeydown="if(event.key==='Enter'||event.key===' ')openPDF(${p.id})">
+      <div class="card-thumb">${thumbHTML}</div>
       <div class="card-body">
         <span class="card-category">${p.category}</span>
         <h3 class="card-title">${p.name}</h3>
@@ -624,56 +803,77 @@ function renderCards() {
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </span>
         </div>
-        <a class="card-dl-btn" href="${p.file}" download onclick="event.stopPropagation()">
-          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download PDF
-        </a>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
+/* ── Open PDF directly in the viewer (no cover image) ── */
 function openPDF(id) {
   const p = programs.find(x => x.id === id);
   if (!p) return;
+
   document.getElementById('viewer-title').textContent = p.name;
   document.getElementById('viewer-meta').textContent = p.category + ' · ' + p.date;
+
+  const fileURL = encodeURIComponent(p.file);
   document.getElementById('dl-link').href = p.file;
   document.getElementById('dl-link').download = p.file;
   document.getElementById('fallback-link').href = p.file;
-  const iframe = document.getElementById('pdf-iframe');
+  document.getElementById('dl-link-fallback').href = p.file;
+  document.getElementById('dl-link-fallback').download = p.file;
+
+  const iframe  = document.getElementById('pdf-iframe');
   const fallback = document.getElementById('viewer-fallback');
   fallback.classList.remove('visible');
   iframe.style.display = 'block';
+
+  // Append #view=FitH for desktop PDF rendering; mobile will use native viewer
   iframe.src = p.file + '#view=FitH&toolbar=1';
-  iframe.onerror = () => { iframe.style.display = 'none'; fallback.classList.add('visible'); };
+
+  // iOS Safari can't render PDFs in iframes — show the fallback with Open / Download
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  if (isIOS) {
+    iframe.style.display = 'none';
+    fallback.classList.add('visible');
+  } else {
+    iframe.onerror = () => {
+      iframe.style.display = 'none';
+      fallback.classList.add('visible');
+    };
+  }
+
   syncThemeBtns();
   document.getElementById('main-page').style.display = 'none';
   document.getElementById('viewer-page').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
+/* ── Close viewer ── */
 function closePDF() {
   document.getElementById('viewer-page').classList.remove('active');
   document.getElementById('main-page').style.display = 'block';
   document.body.style.overflow = '';
-  document.getElementById('pdf-iframe').src = 'about:blank';
+  // Delay clearing src so the close animation doesn't flash the PDF away
+  setTimeout(() => { document.getElementById('pdf-iframe').src = 'about:blank'; }, 300);
 }
 
+/* ── Theme ── */
 function setTheme(t) {
   document.documentElement.setAttribute('data-theme', t);
   syncThemeBtns();
-  localStorage.setItem('memorial-theme', t);
+  try { localStorage.setItem('memorial-theme', t); } catch(e) {}
 }
-
 function syncThemeBtns() {
   const t = document.documentElement.getAttribute('data-theme');
   document.querySelectorAll('.theme-btn').forEach(b => b.classList.toggle('active', b.dataset.t === t));
 }
 
 // Init
-const saved = localStorage.getItem('memorial-theme');
-if (saved) setTheme(saved); else syncThemeBtns();
+try {
+  const saved = localStorage.getItem('memorial-theme');
+  if (saved) setTheme(saved); else syncThemeBtns();
+} catch(e) { syncThemeBtns(); }
 renderCards();
 </script>
 </body>
