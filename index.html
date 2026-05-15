@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>In Loving Memory — LEE DECUIR A CELEBRATION OF LIFE
-Program</title>
+  <title>Lee Arthur DeCuir — A Celebration of Life</title>
   <meta name="description" content="Memorial Program Collection" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -375,187 +374,20 @@ Program</title>
   .pdf-card:nth-child(5){animation-delay:0.33s;}
   .pdf-card:nth-child(6){animation-delay:0.40s;}
 
-  /* ════════════════════════════════════
-     RESPONSIVE — ALL DEVICES
-     Breakpoints:
-       1024px+ : laptop / desktop
-       768–1023: tablet (iPad, Android tablet)
-       480–767 : large phones (iPhone Plus, Android large)
-       390–479 : standard phones (iPhone 14/15, Pixel)
-       320–389 : small phones (iPhone SE, older Android)
-  ════════════════════════════════════ */
-
-  /* ── Laptop / large desktop (1024px+) ── */
-  @media(min-width:1024px){
-    .pdf-grid{grid-template-columns:repeat(3,1fr);}
-    .hero{padding:90px 40px 70px;}
-    .section{padding:0 40px 80px;}
-  }
-
-  /* ── Tablet landscape + small laptop (768px–1023px) ── */
-  @media(max-width:1023px) and (min-width:768px){
-    .header-inner{padding:14px 24px;}
-    .hero{padding:60px 24px 48px;}
-    .section{padding:0 24px 60px;}
-    .tribute-band{padding:44px 24px;}
-    .site-footer{padding:36px 24px 28px;}
-    .footer-inner{grid-template-columns:1fr 1fr;gap:24px;}
-    .pdf-grid{grid-template-columns:repeat(2,1fr);gap:18px;}
-    .hero-title{font-size:clamp(30px,4vw,46px);}
-    .portrait-img,.portrait-placeholder{width:134px;height:134px;}
-  }
-
-  /* ── Tablet portrait (768px) ── */
+  /* ── RESPONSIVE ── */
   @media(max-width:768px){
-    .header-inner{padding:12px 20px;gap:12px;}
-    .brand-title{font-size:16px;}
-    .hero{padding:52px 20px 42px;}
-    .hero::before{width:360px;height:360px;}
-    .hero::after{width:560px;height:560px;}
-    .section{padding:0 20px 52px;}
-    .tribute-band{padding:38px 20px;margin-bottom:48px;}
-    .tribute-quote{font-size:clamp(16px,2.8vw,22px);}
-    .footer-inner{grid-template-columns:1fr;gap:22px;}
-    .site-footer{padding:32px 20px 24px;}
-    .pdf-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
-    .viewer-header{padding:12px 18px;gap:10px;}
-    .viewer-footer{padding:9px 18px;}
+    .header-inner{padding:14px 18px;}
+    .hero{padding:50px 18px 40px;}
+    .section{padding:0 18px 50px;}
+    .tribute-band{padding:36px 18px;}
+    .footer-inner{grid-template-columns:1fr;gap:20px;}
+    .site-footer{padding:32px 18px 24px;}
+    .pdf-grid{grid-template-columns:1fr;}
+    .viewer-header{padding:12px 16px;}
+    .viewer-footer{padding:8px 16px;}
     .viewer-footer-quote{display:none;}
-    .hero-stats{gap:28px;}
+    .hero-stats{gap:24px;}
     .theme-label{display:none;}
-    .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;}
-  }
-
-  /* ── Large phones — iPhone Plus, Pro Max, Android XL (480px–767px) ── */
-  @media(max-width:767px) and (min-width:480px){
-    .header-inner{padding:12px 18px;}
-    .brand-eyebrow{display:none;}
-    .hero{padding:48px 18px 38px;}
-    .hero-title{font-size:clamp(28px,6vw,40px);}
-    .hero-subtitle{font-size:14px;max-width:100%;}
-    .section{padding:0 18px 44px;}
-    .tribute-band{padding:34px 18px;margin-bottom:40px;}
-    .pdf-grid{grid-template-columns:1fr 1fr;gap:14px;}
-    .card-thumb{height:130px;}
-    .card-body{padding:14px 16px 16px;}
-    .card-title{font-size:15px;}
-    .card-meta{font-size:11px;}
-    .portrait-img,.portrait-placeholder{width:128px;height:128px;}
-    .viewer-name{font-size:15px;}
-    .viewer-actions .theme-switcher{display:none;}
-  }
-
-  /* ── Standard phones — iPhone 14/15, Pixel 7, Galaxy S (390px–479px) ── */
-  @media(max-width:479px) and (min-width:390px){
-    .header-inner{padding:11px 16px;}
-    .brand-eyebrow{display:none;}
-    .brand-title{font-size:15px;}
-    .theme-switcher{padding:3px 6px;}
-    .theme-btn{width:20px;height:20px;}
-    .hero{padding:44px 16px 36px;}
-    .hero-title{font-size:clamp(26px,7vw,36px);}
-    .hero-subtitle{font-size:13.5px;max-width:100%;}
-    .hero-stats{gap:20px;}
-    .stat-num{font-size:22px;}
-    .hero-divider::before,.hero-divider::after{width:50px;}
-    .section{padding:0 16px 40px;}
-    .section-title{font-size:11px;}
-    .tribute-band{padding:30px 16px;margin-bottom:36px;}
-    .tribute-quote{font-size:clamp(15px,4vw,19px);}
-    .pdf-grid{grid-template-columns:1fr;gap:14px;}
-    .card-thumb{height:140px;}
-    .portrait-img,.portrait-placeholder{width:120px;height:120px;}
-    .site-footer{padding:28px 16px 20px;}
-    .footer-inner{gap:18px;}
-    .footer-col h4{font-size:9px;}
-    .footer-col p,.footer-col ul li{font-size:12px;}
-    .footer-copy,.footer-brand{font-size:10px;}
-    /* viewer */
-    .viewer-header{padding:10px 14px;flex-wrap:wrap;gap:8px;}
-    .viewer-left{width:100%;}
-    .viewer-actions{width:100%;justify-content:flex-end;}
-    .viewer-actions .theme-switcher{display:none;}
-    .viewer-name{font-size:14px;}
-    .viewer-footer{padding:8px 14px;}
-    .viewer-footer-quote{display:none;}
-    .viewer-footer-info{font-size:10px;}
-  }
-
-  /* ── Small phones — iPhone SE, older iPhones, small Androids (320px–389px) ── */
-  @media(max-width:389px){
-    .header-inner{padding:10px 14px;gap:8px;}
-    .brand-eyebrow{display:none;}
-    .brand-title{font-size:14px;letter-spacing:0.04em;}
-    .theme-switcher{padding:3px 5px;gap:4px;}
-    .theme-btn{width:18px;height:18px;}
-    .theme-label{display:none;}
-    .hero{padding:38px 14px 30px;}
-    .hero::before{width:280px;height:280px;}
-    .hero::after{width:440px;height:440px;}
-    .hero-tag{font-size:8.5px;padding:4px 10px;letter-spacing:0.16em;}
-    .hero-title{font-size:clamp(22px,7.5vw,30px);margin-bottom:14px;}
-    .hero-subtitle{font-size:13px;margin-bottom:24px;}
-    .hero-stats{gap:16px;}
-    .stat-num{font-size:20px;}
-    .stat-label{font-size:9px;}
-    .hero-divider{margin-bottom:24px;}
-    .hero-divider::before,.hero-divider::after{width:36px;}
-    .portrait-img,.portrait-placeholder{width:108px;height:108px;}
-    .portrait-dot{width:5px;height:5px;}
-    .section{padding:0 14px 36px;}
-    .section-header{margin-bottom:20px;padding-bottom:10px;}
-    .section-title{font-size:10px;letter-spacing:0.14em;}
-    .tribute-band{padding:26px 14px;margin-bottom:30px;}
-    .tribute-quote{font-size:14px;line-height:1.5;}
-    .tribute-attr{font-size:10px;}
-    .pdf-grid{grid-template-columns:1fr;gap:12px;}
-    .card-thumb{height:120px;}
-    .card-body{padding:12px 14px 14px;}
-    .card-category{font-size:8px;padding:2px 7px;}
-    .card-title{font-size:14px;}
-    .card-meta{font-size:11px;margin-bottom:10px;}
-    .card-date{font-size:9px;}
-    .card-open{font-size:10px;}
-    .site-footer{padding:24px 14px 18px;}
-    .footer-inner{gap:16px;}
-    .footer-col h4{font-size:9px;margin-bottom:8px;}
-    .footer-col p,.footer-col ul li{font-size:11.5px;}
-    .footer-copy,.footer-brand{font-size:10px;}
-    .footer-bottom{flex-direction:column;align-items:flex-start;gap:4px;}
-    /* viewer */
-    .viewer-header{padding:9px 12px;flex-wrap:wrap;gap:8px;}
-    .viewer-left{width:100%;}
-    .viewer-actions{width:100%;justify-content:space-between;}
-    .viewer-actions .theme-switcher{display:none;}
-    .action-btn{padding:7px 12px;font-size:10px;}
-    .viewer-name{font-size:13px;}
-    .viewer-label{font-size:8px;}
-    .viewer-footer{padding:7px 12px;}
-    .viewer-footer-quote{display:none;}
-    .viewer-footer-info{font-size:9px;}
-  }
-
-  /* ── Touch devices: larger tap targets ── */
-  @media(hover:none) and (pointer:coarse){
-    .theme-btn{width:26px;height:26px;}
-    .action-btn{min-height:40px;padding:9px 16px;}
-    .pdf-card:hover{transform:none;}
-    .pdf-card:active{transform:translateY(-2px);box-shadow:var(--shadow);}
-    .card-open svg{transform:none!important;}
-  }
-
-  /* ── iPhone notch / Dynamic Island safe areas ── */
-  @supports(padding:max(0px)){
-    header{
-      padding-top:max(0px, env(safe-area-inset-top));
-    }
-    .site-footer,.viewer-footer{
-      padding-bottom:max(16px, env(safe-area-inset-bottom));
-    }
-    .header-inner{
-      padding-left:max(16px, env(safe-area-inset-left));
-      padding-right:max(16px, env(safe-area-inset-right));
-    }
   }
   </style>
 </head>
@@ -568,7 +400,7 @@ Program</title>
     <div class="header-inner">
       <div class="site-brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
         <span class="brand-eyebrow">Family Celebration</span>
-        <span class="brand-title">In Loving Memory</span>
+        <span class="brand-title">Lee Arthur DeCuir</span>
       </div>
       <div class="header-right">
         <div class="theme-switcher">
@@ -608,11 +440,12 @@ Program</title>
         -->
       </div>
 
-      <span class="hero-tag">✦ Memorial Program Archive</span>
-      <h1 class="hero-title">Honoring Those<br/><em>We Love</em></h1>
+      <span class="hero-tag">✦ A Celebration of Life</span>
+      <h1 class="hero-title">Lee Arthur<br/><em>DeCuir</em></h1>
       <p class="hero-subtitle">
-        A curated collection of memorial programs — each a beautiful record
-        of a life well-lived and deeply cherished.
+        The family of Lee Arthur DeCuir sincerely thanks you for your
+        prayers, support, love, and presence during this time of
+        remembrance and celebration.
       </p>
       <div class="hero-divider"><span>✦</span></div>
       <div class="hero-stats">
@@ -634,16 +467,15 @@ Program</title>
 
   <div class="tribute-band">
     <p class="tribute-quote">
-      "Those we love don't go away, they walk beside us every day —
-      unseen, unheard, but always near; still loved, still missed,
-      still very dear."
+      "To know Lee was to experience depth, warmth, intellect,
+      and intentional living."
     </p>
-    <p class="tribute-attr">— Traditional Memorial Verse</p>
+    <p class="tribute-attr">— The DeCuir Family</p>
   </div>
 
   <section class="section">
     <div class="section-header">
-      <span class="section-title">Memorial Programs</span>
+      <span class="section-title">Lee DeCuir's Program</span>
       <span class="section-count" id="card-count">Programs</span>
     </div>
     <div class="pdf-grid" id="pdf-grid"></div>
@@ -653,7 +485,7 @@ Program</title>
     <div class="footer-inner">
       <div class="footer-col">
         <h4>About This Collection</h4>
-        <p>A family archive of memorial programs, preserved digitally so loved ones near and far can access them at any time.</p>
+        <p>A Celebration of Life program for Lee DeCuir — his legacy lives on!</p>
       </div>
       <div class="footer-col">
         <h4>How To Use</h4>
@@ -666,12 +498,11 @@ Program</title>
       </div>
       <div class="footer-col">
         <h4>Sharing</h4>
-        <p> Share the URL or generate a QR code to give family and friends instant access to all programs.</p>
+        <p>Share the URL or generate a QR code to give family and friends instant access to Lee's Celebration of Life program.</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 FAMILY CELEBRATION OF LEE'S LIFE
- · All Rights Reserved</span>
+      <span class="footer-copy">© 2026 Family Celebration of Lee Arthur DeCuir's Life · All Rights Reserved</span>
       <span class="footer-brand">With love, always.</span>
     </div>
   </footer>
@@ -716,7 +547,7 @@ Program</title>
   </div>
 
   <div class="viewer-footer">
-    <span class="viewer-footer-quote">"Gone from our sight, but never from our hearts."</span>
+    <span class="viewer-footer-quote">"To know Lee was to experience depth, warmth, intellect, and intentional living."</span>
     <span class="viewer-footer-info" id="viewer-meta">Memorial Program</span>
   </div>
 </div>
@@ -739,11 +570,16 @@ const programs = [
     date: "May 16, 2026",
     location: "City, Country",
     description: "A celebration of a life filled with kindness, laughter, and love shared across generations.",
-    category: "Funeral Service",
+    category: "Celebration of Life",
     year: "2026"
   },
-  
 ];
+
+/* ── Detect mobile / iOS / Android ── */
+function isMobileDevice() {
+  return /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent)
+    || (navigator.maxTouchPoints > 1 && /MacIntel/.test(navigator.platform));
+}
 
 function renderCards() {
   const grid = document.getElementById('pdf-grid');
@@ -775,6 +611,15 @@ function renderCards() {
 function openPDF(id) {
   const p = programs.find(x => x.id === id);
   if (!p) return;
+
+  /* ── MOBILE (iPhone 6–17, all Androids): open PDF directly in browser tab ── */
+  /* This completely bypasses the iframe cover-image/crop issue on mobile      */
+  if (isMobileDevice()) {
+    window.open(p.file, '_blank');
+    return;
+  }
+
+  /* ── DESKTOP: use the full-screen iframe viewer ── */
   document.getElementById('viewer-title').textContent = p.name;
   document.getElementById('viewer-meta').textContent = p.category + ' · ' + p.date;
   document.getElementById('dl-link').href = p.file;
@@ -786,6 +631,13 @@ function openPDF(id) {
   iframe.style.display = 'block';
   iframe.src = p.file + '#view=FitH&toolbar=1';
   iframe.onerror = () => { iframe.style.display = 'none'; fallback.classList.add('visible'); };
+  /* Safety: show fallback if iframe still blank after 4s */
+  setTimeout(() => {
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || doc.body.innerHTML === '') { iframe.style.display='none'; fallback.classList.add('visible'); }
+    } catch(e) { /* PDF loaded cross-origin — fine */ }
+  }, 4000);
   syncThemeBtns();
   document.getElementById('main-page').style.display = 'none';
   document.getElementById('viewer-page').classList.add('active');
